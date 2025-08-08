@@ -41,7 +41,7 @@ async function createExplicitDispatch(roomName) {
   const agentDispatchClient = new AgentDispatchClient(process.env.LIVEKIT_URL, process.env.LIVEKIT_API_KEY, process.env.LIVEKIT_API_SECRET);
 
   // create a dispatch request for an agent named "test-agent" to join "my-room"
-  const dispatch = await agentDispatchClient.createDispatch(roomName, agentName, {
+  const dispatch = await agentDispatchClient.createDispatch({
     metadata: '{"user_id": "12345"}',
   });
   console.log('created dispatch', dispatch);
